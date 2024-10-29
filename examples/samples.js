@@ -1,4 +1,4 @@
-var QRCode = require('../lib/qrcode.js');
+import QRCode from '../lib/qrcode.js'
 
 //Sample 1
 var qrcode = new QRCode("Hello World!");

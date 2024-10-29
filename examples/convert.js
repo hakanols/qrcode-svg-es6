@@ -1,8 +1,8 @@
-var QRCode = require('../lib/qrcode.js');
+import QRCode from '../lib/qrcode.js'
 
 var htmlpdf;
 try {
-  htmlpdf = require('html-pdf');
+  htmlpdf = await import('html-pdf');
 }
 catch (e) {
   console.error("Please run: npm install html-pdf");

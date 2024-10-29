@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 <body>
-<div id="container"></div>
-<script src="../lib/qrcode.js"></script>
-<script>
-var qrcode = new QRCode({ content: "Hello World!", join: true });
-var svg = qrcode.svg();
-document.getElementById("container").innerHTML = svg;
-</script>
+	<script type="module">
+		import QRCode from '../lib/qrcode.js'
+        
+        function addText(text){
+            const p = document.createElement('div');
+            p.innerText = text
+            document.body.appendChild(p);
+        }
+
+		let qrcode = new QRCode({ content: "Hello World!", join: true });
+
+        addText("HTML image element (Can  be copied)")
+		document.body.appendChild(qrcode.htmlImg());
+
+        addText("Raw SVG")
+        const div = document.createElement('div');
+        div.innerHTML = qrcode.svg();
+        document.body.appendChild(div);
+	</script>
 </body>
 </html>
